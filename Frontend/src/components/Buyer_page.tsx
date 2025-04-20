@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaArrowRight, FaTruck, FaLock, FaTags, FaUndo } from "react-icons/fa";
 import Navbar1 from "./Navbar1";
 

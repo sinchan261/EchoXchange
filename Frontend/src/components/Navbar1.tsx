@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaSearch, FaHeart, FaShoppingCart, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
-import React, { useState } from "react";
+import  { useState } from "react";
 
 function Navbar1() {
   const [showSearch, setShowSearch] = useState(false);

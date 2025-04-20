@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar.tsx";
+
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage.tsx";
 import Home from "./components/Home.tsx";

@@ -39,7 +39,7 @@ app.post('/login', async (req: Request, res: Response):Promise<any> => {
 
     try {
         // Find user in database
-        const user = await userModel.findOne({ email, password });
+        const user = await userModel.findOne({ email });
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid credentials! Please register.' });

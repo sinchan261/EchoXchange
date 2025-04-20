@@ -60,7 +60,7 @@ const EcoXchangeLogin: React.FC = () => {
   return (
     <div className="min-h-screen bg-green-100">
       {/* Header */}
-      <header className="flex items-center justify-between px-12 py-4 bg-white border-b border-gray-200">
+      {/* <header className="flex items-center justify-between px-12 py-4 bg-white border-b border-gray-200">
         <div className="flex items-center">
           <img src="image1.png" alt="EcoXchange Logo" className="w-10 h-10 mr-3" />
           <h1 className="text-2xl font-bold text-gray-800">EcoXchange</h1>
@@ -75,7 +75,7 @@ const EcoXchangeLogin: React.FC = () => {
             <li><a href="#" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
           </ul>
         </nav>
-      </header>
+      </header> */}
 
       {/* Wave Divider */}
       <div className="h-10 bg-bottom bg-cover" style={{
@@ -83,96 +83,98 @@ const EcoXchangeLogin: React.FC = () => {
       }}></div>
 
       {/* Main Content */}
-      <main className="flex flex-col md:flex-row px-6 md:px-12 pt-8">
-        {/* Login Section */}
-        <div className="flex-1 md:pr-12 max-w-md">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Get Started Now</h2>
+{/* Main Content */}
+<main className="flex flex-col md:flex-row md:gap-20 px-6 md:px-12 pt-8 w-full">
+  {/* Login Section */}
+  <div className="flex-1 md:pr-12 max-w-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Get Started Now</h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-            </div>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+          className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+      </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-            </div>
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+          className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+      </div>
 
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-                className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-            </div>
+      <div>
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
+          required
+          className="mt-1 w-full p-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+      </div>
 
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="terms"
-                name="terms"
-                checked={formData.terms}
-                onChange={handleInputChange}
-                className="mr-2"
-              />
-              <label htmlFor="terms" className="text-sm text-gray-700">I agree to the terms & policy</label>
-            </div>
+      <div className="flex items-center">
+        <input
+          type="checkbox"
+          id="terms"
+          name="terms"
+          checked={formData.terms}
+          onChange={handleInputChange}
+          className="mr-2"
+        />
+        <label htmlFor="terms" className="text-sm text-gray-700">I agree to the terms & policy</label>
+      </div>
 
-            <button
-              type="submit"
-              className="w-full p-3 text-white bg-green-800 rounded-lg hover:bg-pink-200 hover:text-black border border-transparent hover:border-green-800 transition"
-            >
-              Signup
-            </button>
-          </form>
+      <button
+        type="submit"
+        className="w-full p-3 text-white bg-green-800 rounded-lg hover:bg-pink-200 hover:text-black border border-transparent hover:border-green-800 transition"
+      >
+        Signup
+      </button>
+    </form>
 
-          <div className="flex flex-col md:flex-row gap-4 mt-6">
-            <button className="flex items-center justify-center w-full md:w-1/2 p-2 border rounded-full bg-white hover:bg-gray-100 transition">
-              <img src="google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
-              Sign in with Google
-            </button>
-            <button className="flex items-center justify-center w-full md:w-1/2 p-2 border rounded-full bg-white hover:bg-gray-100 transition">
-              <FaApple className="text-lg mr-2" />
-              Sign in with Apple
-            </button>
-          </div>
+    <div className="flex flex-col md:flex-row gap-4 mt-6">
+      <button className="flex items-center justify-center w-full md:w-1/2 p-2 border rounded-full bg-white hover:bg-gray-100 transition">
+        <img src="google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
+        Sign in with Google
+      </button>
+      <button className="flex items-center justify-center w-full md:w-1/2 p-2 border rounded-full bg-white hover:bg-gray-100 transition">
+        <FaApple className="text-lg mr-2" />
+        Sign in with Apple
+      </button>
+    </div>
 
-          <p className="text-center text-sm mt-6">
-            Have an account? <Link to="/login" className="text-blue-600 font-bold">Sign In</Link>
-          </p>
-        </div>
+    <p className="text-center text-sm mt-6">
+      Have an account? <Link to="/login" className="text-blue-600 font-bold">Sign In</Link>
+    </p>
+  </div>
 
-        {/* Promo Section */}
-        <div className="flex-1 flex flex-col justify-center items-center mt-10 md:mt-0">
-          <div className="text-right w-full">
-            <h2 className="text-3xl text-green-800 leading-snug">Reach your<br />customers faster,</h2>
-            <h2 className="text-purple-700 font-bold text-2xl mt-2">With Us.</h2>
-            <img src="back.jpg" alt="People recycling" className="rounded-lg mt-4 w-full max-w-lg object-fill" />
-          </div>
-        </div>
-      </main>
+  {/* Promo Section */}
+  <div className="flex-1 flex flex-col justify-center items-center mt-10 md:mt-0">
+    <div className="text-left w-full flex flex-col gap-2">
+      <h2 className="text-3xl text-green-800 leading-snug">Reach your<br />customers faster,</h2>
+      <h2 className="text-purple-700 font-bold text-2xl mt-2">With Us.</h2>
+      <img src="back.jpg" alt="People recycling" className="rounded-lg mt-4 w-full max-w-lg object-fill" />
+    </div>
+  </div>
+</main>
+
     </div>
   );
 };

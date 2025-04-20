@@ -58,24 +58,23 @@ const EcoXchangeLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-100">
+    <div className="min-h-screen bg-green-200
+">
       {/* Header */}
-      {/* <header className="flex items-center justify-between px-12 py-4 bg-white border-b border-gray-200">
+      <header className="flex items-center justify-between px-12 py-4 bg-white border-b border-gray-200">
         <div className="flex items-center">
           <img src="image1.png" alt="EcoXchange Logo" className="w-10 h-10 mr-3" />
           <h1 className="text-2xl font-bold text-gray-800">EcoXchange</h1>
         </div>
         <nav>
           <ul className="flex list-none space-x-8">
-            <li className="border-b-4 border-yellow-400">
-              <a href="#" className="text-gray-700 font-semibold">Home</a>
+          <li className="">
+              <a href="/contact" className="text-green-600">Contact Us</a>
+             <h3 className="font-bold text-xl">Welcome to EcoXchange</h3>
             </li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-900">About</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-900">Partners</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
           </ul>
         </nav>
-      </header> */}
+      </header>
 
       {/* Wave Divider */}
       <div className="h-10 bg-bottom bg-cover" style={{
@@ -166,13 +165,24 @@ const EcoXchangeLogin: React.FC = () => {
   </div>
 
   {/* Promo Section */}
-  <div className="flex-1 flex flex-col justify-center items-center mt-10 md:mt-0">
-    <div className="text-left w-full flex flex-col gap-2">
-      <h2 className="text-3xl text-green-800 leading-snug">Reach your<br />customers faster,</h2>
-      <h2 className="text-purple-700 font-bold text-2xl mt-2">With Us.</h2>
-      <img src="back.jpg" alt="People recycling" className="rounded-lg mt-4 w-full max-w-lg object-fill" />
-    </div>
+  <div className="flex-1 flex flex-col items-end mt-10 md:mt-0 relative">
+  <div className="w-full text-right flex flex-col gap-5 mr-0">
+    <h2 className="text-3xl text-green-900 leading-snug">
+      Reach your<br />customers faster,
+    </h2>
+    <h2 className="text-purple-800 font-bold text-3xl mt-2">
+      With Us.
+    </h2>
   </div>
+
+  <img
+    className="absolute bottom-0 right-0 rounded-lg object-cover"
+    src="back.jpg"
+    alt="People recycling"
+    style={{ height: '350px', width: '700px' }}
+  />
+</div>
+
 </main>
 
     </div>

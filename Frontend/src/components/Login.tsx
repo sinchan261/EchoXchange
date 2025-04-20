@@ -37,17 +37,17 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-green-200 relative overflow-x-hidden">
-      <header className="flex justify-between items-center p-4 md:p-8 bg-white">
+       <header className="flex items-center justify-between px-12 py-4 bg-white border-b border-gray-200">
         <div className="flex items-center">
           <img src="image1.png" alt="EcoXchange Logo" className="w-10 h-10 mr-3" />
           <h1 className="text-2xl font-bold text-gray-800">EcoXchange</h1>
         </div>
         <nav>
-          <ul className="flex space-x-8">
-            <li className="border-b-4 border-yellow-400 text-gray-800"><a href="#">Home</a></li>
-            <li><a className="text-gray-600" href="#">About</a></li>
-            <li><a className="text-gray-600" href="#">Partners</a></li>
-            <li><a className="text-gray-600" href="#">Contact Us</a></li>
+          <ul className="flex list-none space-x-8">
+          <li className="">
+              <a href="/contact" className="text-green-600">Contact Us</a>
+             <h3 className="font-bold text-xl">Welcome to EcoXchange</h3>
+            </li>
           </ul>
         </nav>
       </header>
@@ -117,13 +117,24 @@ const LoginPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center items-center mt-10 md:mt-0">
-          <div className="w-full text-right">
-            <h2 className="text-3xl text-green-900 leading-snug">Reach your<br />customers faster,</h2>
-            <h2 className="text-purple-800 font-bold text-3xl mt-2">With Us.</h2>
-            <img className="rounded-lg mt-5 w-3/4 h-auto object-cover" src="back.jpg" alt="People recycling" />
-          </div>
-        </div>
+        <div className="flex-1 flex flex-col items-end mt-10 md:mt-0 relative">
+  <div className="w-full text-right flex flex-col gap-5 mr-0">
+    <h2 className="text-3xl text-green-900 leading-snug">
+      Reach your<br />customers faster,
+    </h2>
+    <h2 className="text-purple-800 font-bold text-3xl mt-2">
+      With Us.
+    </h2>
+  </div>
+
+  <img
+    className="absolute bottom-0 top-40 right-0 rounded-lg object-cover"
+    src="back.jpg"
+    alt="People recycling"
+    style={{ height: '350px', width: '700px' }}
+  />
+</div>
+
       </main>
     </div>
   );

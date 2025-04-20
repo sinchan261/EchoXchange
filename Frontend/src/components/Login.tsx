@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post<LoginResponse>('http://localhost:5000/login', { email, password });
+      const response = await axios.post<LoginResponse>('https://ecoxchangeserver.onrender.com/login', { email, password });
       const receivedToken = response.data.token;
       if (receivedToken) {
         localStorage.setItem('token', receivedToken);

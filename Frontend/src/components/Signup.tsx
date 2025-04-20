@@ -37,7 +37,7 @@ const EcoXchangeLogin: React.FC = () => {
     }
 
     try {
-      const response = await axios.post<RegisterResponse>('http://localhost:5000/register', {
+      const response = await axios.post<RegisterResponse>('https://ecoxchangeserver.onrender.com/register', {
         name,
         email,
         password

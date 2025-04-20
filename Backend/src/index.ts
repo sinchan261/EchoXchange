@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://ecoxchange-e451.onrender.com/",
+    origin: "https://ecoxchange-e451.onrender.com",
     credentials: true,
   })
 );

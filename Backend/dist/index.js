@@ -23,7 +23,7 @@ dotenv_1.default.config();
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: "https://ecoxchange-e451.onrender.com/",
+    origin: "https://ecoxchange-e451.onrender.com",
     credentials: true,
 }));
 app.use(express_1.default.json());

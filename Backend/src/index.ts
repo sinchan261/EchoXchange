@@ -25,7 +25,7 @@ app.post('/register',async(req:Request, res:Response):Promise<any>=>{
     const name=req.body.name;
     const email=req.body.email
     const password=req.body.password
-    const token=jwt.sign({name,email},'secret',{expiresIn:'1h'})
+    const token=await jwt.sign({name,email},'secret',{expiresIn:'1h'})
     const data=await userModel.create({
         name,
         email,

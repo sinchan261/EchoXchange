@@ -38,22 +38,20 @@ const userSchema = new mongoose_1.Schema({
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
     },
     password: {
         type: String,
         required: true,
-        unique: true
+        select: false,
     },
     email: {
         type: String,
         required: true,
         unique: true,
-        lowercase: true,
-        trim: true
     },
     token: {
         type: String,
-    }
+    },
 }, { timestamps: true });
-exports.default = mongoose_1.default.model('User', userSchema);
+exports.default = mongoose_1.default.model("User", userSchema);

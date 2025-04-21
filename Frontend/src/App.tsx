@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage.tsx";
 import Home from "./components/Home.tsx";
@@ -11,26 +10,38 @@ import EcoLaunch from "./components/Ecolunch.tsx";
 import EcoXchangeLogin from "./components/Signup.tsx";
 import LoginPage from "./components/Login.tsx";
 import Contact from "./components/Contact.tsx";
+import Validation from "./components/Validation.tsx";
+import Errorpage from "./components/Errorpage.tsx";
+import Validation2 from "./components/validation2.tsx";
+import { Suspense } from "react";
+import Loader from "./components/Spinner.tsx";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen justify-between">
       {/* <Navbar /> */}
-      
+
       <div className="flex-grow">
+        <Suspense fallback={<Loader/>}>
         <Routes>
           <Route path="/" element={<EcoLaunch />} />
           <Route path="/landingpage" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/navbar1" element={<Navbar1 />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/buyers" element={<Buyer_page />} />
-          <Route path="/signup" element={<EcoXchangeLogin />} />
+          
+          {/* Apply validation to all routes except login and signup */}
+          <Route path="/home" element={<Validation><Home /></Validation>} />
+          <Route path="/wishlist" element={<Validation><Wishlist /></Validation>} />
+          <Route path="/navbar1" element={<Validation><Navbar1 /></Validation>} />
+          <Route path="/checkout" element={<Validation><Checkout /></Validation>} />
+          <Route path="/buyers" element={<Validation><Buyer_page /></Validation>} />
+          <Route path="/contact" element={<Validation><Contact /></Validation>} />
+          <Route path="/error" element={<Validation><Errorpage /></Validation>} />
+          <Route path="/loader" element={<Loader/>} />
+          {/* Do not apply validation for login or signup */}
+          <Route path="/signup" element={<Validation2> <EcoXchangeLogin/></Validation2>} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/contact" element={<Contact></Contact>}></Route>
-          {/* Remove footer route, it's now global */}
-        </Routes>
+        </Routes> 
+        </Suspense>
+
       </div>
 
       <Footer />

@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://your-frontend-name.onrender.com", "http://localhost:5173"], // replace with your frontend URL!
+    origin: ["https://ecoxchange-e451.onrender.com", "http://localhost:5173"], // replace with your frontend URL!
     credentials: true,
   })
 );

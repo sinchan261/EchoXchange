@@ -12,7 +12,7 @@ function Validation2({children}:validationProps) {
         const call= async()=>{
             try
           {  const validation =await  axios.get(
-                "http://localhost:5000/validate",
+               `${import.meta.env.VITE_API_HIGH}/validate`,
                 { withCredentials: true } 
 
             );

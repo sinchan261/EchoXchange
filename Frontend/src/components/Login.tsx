@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
   
     const loginPromise = axios.post(
-      `${import.meta.env.VITE_API_HIGH}/login`,
+      `https://ecoxchangeserver.onrender.com/login`,
       { email, password },
       { withCredentials: true }
     );

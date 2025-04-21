@@ -41,7 +41,7 @@ const EcoXchangeLogin: React.FC = () => {
 
     setIsSubmitting(true);  // Disable the button
 
-    const registrationPromise = axios.post<RegisterResponse>( `${import.meta.env.VITE_API_HIGH}/register`, {
+    const registrationPromise = axios.post<RegisterResponse>( `https://ecoxchangeserver.onrender.com/register`, {
       name,
       email,
       password

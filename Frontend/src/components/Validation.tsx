@@ -12,7 +12,7 @@ function Validation({children}:validationProps) {
         const call= async()=>{
             try
           {  const validation =await  axios.get(
-                `${import.meta.env.VITE_API_HIGH}/validate`,
+                ` https://ecoxchangeserver.onrender.com/validate`,
                 { withCredentials: true } 
 
             );

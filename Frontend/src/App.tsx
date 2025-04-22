@@ -37,7 +37,7 @@ function App() {
           <Route path="/error" element={<Validation><Errorpage /></Validation>} />
           <Route path="/loader" element={<Loader/>} />
           {/* Do not apply validation for login or signup */}
-          <Route path="/signup" element={<Validation2> <EcoXchangeLogin/></Validation2>} />
+          <Route path="/signup" element={<EcoXchangeLogin/>} />
           <Route path="/login" element={<LoginPage />} />
         </Routes> 
         </Suspense>

@@ -21,7 +21,7 @@ const EcoLaunch = () => {
         </nav>
       </header>
 
-      <main className="flex flex-wrap p-[130px_60px] bg-[#fafafa] relative bg-[url('image3.2.jpg')] bg-cover bg-center bg-no-repeat h-[620px]">
+      <main className="flex flex-wrap p-[130px_60px] bg-[#fafafa] relative bg-[url('https://img.freepik.com/premium-photo/green-planet-with-green-background_832479-5069.jpg?ga=GA1.1.1144923271.1713171046&semt=ais_hybrid&w=740')] bg-cover bg-center bg-no-repeat h-[620px]">
         <div className="flex-1 min-w-[350px] z-[2]">
           <h3 className="font-semibold text-[27px] mb-2 uppercase text-black leading-[1.6]">
             WELCOME! LET’S GIVE E-WASTE A SECOND LIFE—<br />

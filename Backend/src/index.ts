@@ -97,16 +97,19 @@ app.post('/login', async (req: Request, res: Response): Promise<any> => {
 // Token Validation Route
 app.get('/validate', async (req: Request, res: Response): Promise<any> => {
   const token = req.cookies.access_token;
+
   if (!token) {
-    return res.status(408).send({ message: "Token not found", user: null });
+    return res.status(401).send({ message: "Token not found", user: null });
   }
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret') as jwt.JwtPayload;
+
     const userData = await userModel.findById(decoded.id);
     if (!userData) {
       return res.status(404).send({ message: "User not found", user: null });
     }
+
     return res.status(200).send({ message: "Token valid", user: decoded });
   } catch (error) {
     return res.status(401).send({ message: "Token invalid or expired", user: null });

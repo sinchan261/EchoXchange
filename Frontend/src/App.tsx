@@ -12,7 +12,7 @@ import LoginPage from "./components/Login.tsx";
 import Contact from "./components/Contact.tsx";
 import Validation from "./components/Validation.tsx";
 import Errorpage from "./components/Errorpage.tsx";
-import Validation2 from "./components/validation2.tsx";
+// import Validation2 from "./components/validation2.tsx";
 import { Suspense } from "react";
 import Loader from "./components/Spinner.tsx";
 

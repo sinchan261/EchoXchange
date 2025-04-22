@@ -13,9 +13,10 @@ connectDB();
 
 const app = express();
 
+// CORS setup
 app.use(
   cors({
-    origin: ["https://ecoxchange-e451.onrender.com", "http://localhost:5173"], // replace with your frontend URL!
+    origin: ["https://ecoxchange-e451.onrender.com", "http://localhost:5173"],  // your frontend URLs
     credentials: true,
   })
 );
@@ -24,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 
-// Basic route to test server is working
+// Root Test Route
 app.get('/', async (req: Request, res: Response): Promise<any> => {
   return res.status(200).send({ message: "Welcome to Backend" });
 });
@@ -72,13 +73,13 @@ app.post('/login', async (req: Request, res: Response): Promise<any> => {
       process.env.JWT_SECRET || 'secret',
       { expiresIn: '24h' }
     );
-
     res.cookie("access_token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      maxAge: 24 * 60 * 60 * 1000,
+      secure: process.env.NODE_ENV === 'production',   // true on Render
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',  // lowercase!
+      maxAge: 24 * 60 * 60 * 1000,  // 1 day
     });
+    
 
     return res.status(200).send({
       message: 'Login successful',
@@ -104,12 +105,10 @@ app.get('/validate', async (req: Request, res: Response): Promise<any> => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret') as jwt.JwtPayload;
-
     const userData = await userModel.findById(decoded.id);
     if (!userData) {
       return res.status(404).send({ message: "User not found", user: null });
     }
-
     return res.status(200).send({ message: "Token valid", user: decoded });
   } catch (error) {
     return res.status(401).send({ message: "Token invalid or expired", user: null });
